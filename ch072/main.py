@@ -1,6 +1,8 @@
 
-
 def main():
+    pass
+
+def main_1():
     with open(r"lefichier.txt","w") as f:
         # f.write("Toto\n")
         # f.write("Titi\n")
