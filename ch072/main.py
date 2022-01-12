@@ -1,5 +1,27 @@
-
+# Lecture csv
 def main():
+    
+    with open('todos.csv') as f:
+        lines = [l.strip() for l in f.readlines()]
+        out = []
+        header = lines[0]
+        data = lines[1:]
+        for d in data:
+            h = header.split(";")
+            v = d.split(";")
+            print(header)
+            print(h)
+            print(d)
+            print(v)
+            print()
+            todo = dict(zip(h,v)) 
+            out.append(todo)
+            print()
+
+        print(out)            
+
+# Ecriture csv
+def main_write_csv():
     # http://jsonplaceholder.typicode.com/todos
     data = [{
         "userId": 1,
@@ -25,24 +47,13 @@ def main():
         "title": "et porro tempora",
         "completed": True
     }]
+    
     with open('todos.csv','w') as f:
         headers = data[0].keys()
-        # dict_keys(['userId', 'id', 'title', 'completed'])
-        print(headers)
         print(*headers,sep=";",file=f)
-        # line = ";".join(headers)
-        # print(line)
-
-        # userId;id;title;completed
-        print(headers)
         for todo in data:         
             v = todo.values()   
             print(*v,sep=";",file=f)
-            
-            #1;4;et porro tempora;True
-            #1;4;et porro tempora;True
-            #1;4;et porro tempora;True
-            #1;4;et porro tempora;True
 
 
 def main_1():
