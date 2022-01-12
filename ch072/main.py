@@ -1,6 +1,48 @@
-# Lecture csv
+import json
+
 def main():
-    
+    with open('todos.json') as f:
+        data = json.load(f)
+        todo = data[0] 
+        print(todo['title'])
+
+def main_write_json():
+    data = [{
+        "userId": 1,
+        "id": 1,
+        "title": "delectus aut autem",
+        "completed": False
+    },
+        {
+        "userId": 1,
+        "id": 2,
+        "title": "quis ut nam facilis et officia qui",
+        "completed": False
+    },
+        {
+        "userId": 1,
+        "id": 3,
+        "title": "fugiat veniam minus",
+        "completed": False
+    },
+        {
+        "userId": 1,
+        "id": 4,
+        "title": "et porro tempora",
+        "completed": True
+    }]
+
+    with open('todos.json','w') as f:
+        # s= json.dumps(data)
+        # print(type(data))
+        # print(type(s))
+        json.dump(data,f)
+        # print(data,file=f)
+
+
+# Lecture csv
+def main_read_csv():
+
     with open('todos.csv') as f:
         lines = [l.strip() for l in f.readlines()]
         out = []
@@ -9,18 +51,14 @@ def main():
         for d in data:
             h = header.split(";")
             v = d.split(";")
-            print(header)
-            print(h)
-            print(d)
-            print(v)
-            print()
-            todo = dict(zip(h,v)) 
+            todo = dict(zip(h, v))
             out.append(todo)
-            print()
 
-        print(out)            
+        print(out)
 
 # Ecriture csv
+
+
 def main_write_csv():
     # http://jsonplaceholder.typicode.com/todos
     data = [{
@@ -47,13 +85,13 @@ def main_write_csv():
         "title": "et porro tempora",
         "completed": True
     }]
-    
-    with open('todos.csv','w') as f:
+
+    with open('todos.csv', 'w') as f:
         headers = data[0].keys()
-        print(*headers,sep=";",file=f)
-        for todo in data:         
-            v = todo.values()   
-            print(*v,sep=";",file=f)
+        print(*headers, sep=";", file=f)
+        for todo in data:
+            v = todo.values()
+            print(*v, sep=";", file=f)
 
 
 def main_1():
