@@ -20,3 +20,5 @@ class Rectangle:
     def set_largeur(self,largeur):
         self._largeur = largeur
     
+    def get_surface(self):
+        return self._longueur*self._largeur

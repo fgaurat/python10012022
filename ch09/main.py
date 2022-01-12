@@ -16,5 +16,8 @@ def main():
     print(r.get_longueur())
     print(r.get_largeur())
 
+    print(f"{r.get_surface()=}")
+
+
 if __name__ == '__main__':
     main()
