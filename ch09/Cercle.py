@@ -1,9 +1,9 @@
 import math
 
+from ICalcGeo import ICalcGeo
 
-class Cercle:
-    
-    
+
+class Cercle(ICalcGeo):
 
     def __init__(self,rayon) -> None:
         self._rayon=rayon

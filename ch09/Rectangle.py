@@ -1,7 +1,10 @@
 
 
 
-class Rectangle:
+from ICalcGeo import ICalcGeo
+
+
+class Rectangle(ICalcGeo):
     _cpt = 0
 
     def __init__(self,longueur,largeur) -> None:

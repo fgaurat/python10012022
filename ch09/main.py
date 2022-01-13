@@ -1,18 +1,26 @@
 from Rectangle import Rectangle
 from Carre import Carre
+from Cercle import Cercle
+from ICalcGeo import ICalcGeo
 
-def show_surface(o):
+def show_surface(o:ICalcGeo):
+    
     print("show_surface",o.get_surface())
 
 def main():
     r = Rectangle(12,5)
     c = Carre(2)
+    ce = Cercle(3)
     print(c.get_cote())
     print(c.get_surface())
+    # print(ce.calc_surface())
+    print(ce.get_surface())
     print(c)
+    print(ce)
 
     show_surface(r)
     show_surface(c)
+    show_surface(ce)
 
 def main_2():
     r = Rectangle(12,5)
