@@ -19,5 +19,5 @@ class Carre(Rectangle):
         self._cote = cote
     
 
-    # def __str__(self) -> str:
-    #     return f"Carre {self._cote=}"
+    def __str__(self) -> str:
+        return f"Carre {self._cote=}"

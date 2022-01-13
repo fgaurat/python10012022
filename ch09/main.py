@@ -6,8 +6,7 @@ def main():
     c = Carre(2)
     print(c.get_cote())
     print(c.get_surface())
-    # print(c)
-    # print(c.get_surface())
+    print(c)
 
 def main_2():
     r = Rectangle(12,5)
