@@ -6,8 +6,12 @@ def main():
     # r = requests.get(url)
     # print(r.text)
 
-    with open('index.html') as f:
+    with open('./ch10/index.html') as f:
         html = f.read()
+        soup = BeautifulSoup(html, 'html.parser')
+        links = soup.find_all('a')
+        for link in links:
+            print(link)
 
 if __name__ == '__main__':
     main()
