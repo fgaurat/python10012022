@@ -1,12 +1,18 @@
 from Rectangle import Rectangle
 from Carre import Carre
 
+def show_surface(o):
+    print("show_surface",o.get_surface())
 
 def main():
+    r = Rectangle(12,5)
     c = Carre(2)
     print(c.get_cote())
     print(c.get_surface())
     print(c)
+
+    show_surface(r)
+    show_surface(c)
 
 def main_2():
     r = Rectangle(12,5)

@@ -17,7 +17,10 @@ class Carre(Rectangle):
 
     def set_cote(self,cote):
         self._cote = cote
-    
 
     def __str__(self) -> str:
         return f"Carre {self._cote=}"
+    
+    # Destructeur
+    def __del__(self):
+        print("del Carre",self)
