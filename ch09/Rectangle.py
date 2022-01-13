@@ -32,3 +32,15 @@ class Rectangle:
 
     def __str__(self) -> str:
         return f"Rectangle {self._longueur=},{self._largeur=}"
+
+    def __eq__(self, o: object) -> bool:
+        # t = a==2?"ok":"ko"
+        # si(a==2;"ok","ko")
+        # t = "ok" if a==2 else "ko"
+
+        # ret = True if self._longueur == o._longueur and self._largeur == o._largeur else False
+        ret = True     
+        if self._longueur == o._longueur and self._largeur == o._largeur:
+            ret = True
+
+        return ret

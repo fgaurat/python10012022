@@ -44,12 +44,13 @@ def main_write_json():
 def main_read_csv():
 
     with open('todos.csv') as f:
+
         lines = [l.strip() for l in f.readlines()]
         out = []
         header = lines[0]
         data = lines[1:]
+        h = header.split(";")
         for d in data:
-            h = header.split(";")
             v = d.split(";")
             todo = dict(zip(h, v))
             out.append(todo)
@@ -107,6 +108,10 @@ def main_1():
         # Lit la totalité dans une chaîne
         # data = f.read()
         # print(data)
+
+        # for line in f:
+        #     print(line)
+
         data = f.readlines()
         print(data)
         for n, line in enumerate(data):
