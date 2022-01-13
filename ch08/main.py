@@ -1,8 +1,11 @@
 import traceback
 
+from TwelveDivisionError import TwelveDivisionError
+
 def division(a,b):
     if b == 12:
-        err = Exception("division par Douze !")
+        # err = Exception("division par Douze !")
+        err = TwelveDivisionError()
         raise err
     c = a/b
     return c
@@ -32,6 +35,9 @@ def main():
         print(e)
     except ValueError as e:
         print("un autre erreur !")
+        print(e)
+    except TwelveDivisionError as e:
+        print("une erreur division!")
         print(e)
     except Exception as e:
         print("une erreur imprévue !")
