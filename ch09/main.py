@@ -1,7 +1,11 @@
 from Rectangle import Rectangle
+from Carre import Carre
 
 
 def main():
+    c = Carre(1)
+
+def main_2():
     r = Rectangle(12,5)
     print(Rectangle.get_cpt())
     r1 = Rectangle(12,6)
@@ -11,6 +15,7 @@ def main():
     s = str(r)
     print(s)
 
+    # del r
     print(r)
     print(r1)
 

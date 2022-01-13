@@ -43,4 +43,11 @@ class Rectangle:
         if self._longueur == o._longueur and self._largeur == o._largeur:
             ret = True
 
-        return ret
+        # return ret
+        return (
+                self._longueur == o._longueur and 
+                    self._largeur == o._largeur)
+
+    # Destructeur
+    def __del__(self):
+        print("del",self)
