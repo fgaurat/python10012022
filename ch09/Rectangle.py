@@ -48,6 +48,6 @@ class Rectangle:
                 self._longueur == o._longueur and 
                     self._largeur == o._largeur)
 
-    # Destructeur
-    def __del__(self):
-        print("del",self)
+    # # Destructeur
+    # def __del__(self):
+    #     print("del",self)

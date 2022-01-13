@@ -7,7 +7,8 @@ from Rectangle import Rectangle
 class Carre(Rectangle):
     
 
-    def __init__(self,cote):
+    def __init__(self, cote) -> None:
+        super().__init__(cote, cote)
         print(f"def __init__(self,{cote=})")
         self._cote = cote
     
