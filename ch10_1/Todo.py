@@ -7,3 +7,4 @@ class Todo:
     userId:int=0
     title:str=""
     completed:bool=False
+

@@ -11,7 +11,16 @@ def main():
     todos = dao.findAll()
 
     for todo in todos:
-        print(todo.title)
+        print(todo)
+
+    completed_todos = dao.findCompleted()
+    for todo in completed_todos:
+        print(todo)
+
+
+    todo = Todo(title="Formation Python",completed=True)
+    dao.save(todo)
+
 
 def main_select_todos():
     with sqlite3.connect('todos.db') as con:
