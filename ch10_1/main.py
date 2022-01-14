@@ -5,6 +5,23 @@ import sqlite3
 
 
 def main():
+
+    dao = TodoDAO('todos.db')
+
+    todos = dao.findAll()
+
+    for todo in todos:
+        print(todo.title)
+
+def main_select_todos():
+    with sqlite3.connect('todos.db') as con:
+        cur = con.cursor()
+        sql= "SELECT * FROM todos_tbl"
+        for id,userId,title,completed in cur.execute(sql):
+            print(title)
+
+
+def main_insert_todos():
     con = sqlite3.connect('todos.db')
     cur = con.cursor()
     with open("todos.json") as f:
