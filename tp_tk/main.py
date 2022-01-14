@@ -1,17 +1,23 @@
+#!/usr/bin/env python
 from tkinter import *
 from tkinter import ttk
+from TodoDAO import TodoDAO
 
 def sayHello():
     print("Hello")
 
 def main():
+    dao = TodoDAO("todos.db")
     root = Tk()
     
-    tree = ttk.Treeview(root,columns=('id','userId','title','completed'))
+    tree = ttk.Treeview(root,columns=('id','userId','title','completed'),show="headings")
     tree.heading('id',text="#")
     tree.heading('userId',text="userId")
     tree.heading('title',text="title")
     tree.heading('completed',text="completed")
+    
+    for todo in dao.findAll():
+        tree.insert('',index=todo.id,values=[todo.id,todo.userId,todo.title,todo.completed])
 
     
     tree.pack(fill=BOTH,expand=True)
