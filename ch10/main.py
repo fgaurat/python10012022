@@ -16,12 +16,12 @@ def main():
     err = False
     for log_file in logs:
         with open(log_file) as f:
-            for line in f:
+            for i,line in enumerate(f):
                 # result = re.findall(r'((\d{1,3}\.){3}\d{1,3})',line.strip())
                 # result = re.findall(r'(^.+?)\s',line.strip())
                 result = re.findall(r'"\s(\d{3})',line.strip())
                 if '404' in result:
-                    print('erreur')
+                    print('erreur',log_file,i+1)
 
                 if len(result) ==0:
                     err =True
