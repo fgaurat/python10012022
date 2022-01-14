@@ -4,9 +4,19 @@ import argparse
 import sqlite3
 from Todo import Todo
 from TodoDAO import TodoDAO
+import configparser
+
 
 def main():
-    dao = TodoDAO('todos.db')
+    parser = argparse.ArgumentParser(description = 'Utilisation de TodoDAO')
+    parser.add_argument('config_file',help="fichier de configuration")
+    args = parser.parse_args()
+    
+    config = configparser.ConfigParser()
+    config.read(args.config_file)
+    db_file = config['DB']['file']
+
+    dao = TodoDAO(db_file)
 
     todos = dao.findAll()
 
