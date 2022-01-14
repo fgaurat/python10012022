@@ -7,7 +7,12 @@ import sqlite3
 def main():
     con = sqlite3.connect('todos.db')
     cur = con.cursor()
-    cur.execute("INSERT INTO todos_tbl(user_id,title,completed) VALUES (12,'la todo',0)")
+    with open("todos.json") as f:
+        data = json.load(f)
+        for todo in data:
+            sql = f"INSERT INTO todos_tbl(user_id,title,completed) VALUES ({todo['user_id']},'{todo['title']}',{todo['completed']})"
+            cur.execute(sql)
+    
     con.commit()
     con.close()
 
