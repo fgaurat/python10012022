@@ -41,7 +41,8 @@ def main():
         print(e)
     except Exception as e:
         print("une erreur imprévue !")
-        print(e)
+        print(e)        
+
     
     finally:
         print("finally, après l'erreur")    

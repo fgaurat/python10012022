@@ -15,6 +15,7 @@ def main():
     print(c.get_surface())
     # print(ce.calc_surface())
     print(ce.get_surface())
+    c.set_cote(12)
     print(c)
     print(ce)
 
