@@ -10,7 +10,7 @@ def main():
     with open("todos.json") as f:
         data = json.load(f)
         for todo in data:
-            sql = f"INSERT INTO todos_tbl(user_id,title,completed) VALUES ({todo['user_id']},'{todo['title']}',{todo['completed']})"
+            sql = f"INSERT INTO todos_tbl(user_id,title,completed) VALUES ({todo['userId']},'{todo['title']}',{todo['completed']})"
             cur.execute(sql)
     
     con.commit()
